@@ -42,17 +42,17 @@ namespace FirstMVC5.Controllers
 
         public RedirectToRouteResult RedirectToRouteResult()
         {
-            /*
+            
             //Para rotas mais complexas
             return RedirectToRoute(new
             {
                 controller = "Home",
                 action = "Index"
             });
-            */
+            
 
 
-            return RedirectToAction("IndexTeste", "Teste"); //Para Rotas simples
+            //return RedirectToAction("IndexTeste", "Teste"); //Para Rotas simples
 
         }
     }
