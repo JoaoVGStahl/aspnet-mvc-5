@@ -10,8 +10,8 @@ namespace FirstMVC5.Controllers
     [RoutePrefix("testes")]
     public class TesteController : Controller
     {
-        [Route]
-        public ActionResult IndexTeste()
+        [Route("{id:int}")]
+        public ActionResult IndexTeste(int id, string texto)
         {
             return View();
         }
