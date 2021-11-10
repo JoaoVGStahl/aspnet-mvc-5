@@ -13,6 +13,9 @@ namespace FirstMVC5
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapMvcAttributeRoutes();
+
+            /*
             routes.MapRoute(
                 name: "Institucional",
                 url: "institucional/{controller}/{action}",
@@ -24,7 +27,7 @@ namespace FirstMVC5
                 url: "sistema/{controller}/{action}/{id}",
                 defaults: new { controller = "Teste", action = "IndexTeste", id = UrlParameter.Optional }
             );
-
+            */
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
