@@ -26,11 +26,13 @@ namespace FirstMVC5.Models
 
         public bool Ativo { get; set; }
 
+        /*
         [Required(ErrorMessage = "O campo {0} é requerido!")]
         public string Senha { get; set; }
 
         [Compare("Senha", ErrorMessage ="As senha informadadas não conferem!")]
         [Required(ErrorMessage = "O campo {0} é requerido!")]
         public string SenhaConfirmacao { get; set; }
+        */
     }
 }
