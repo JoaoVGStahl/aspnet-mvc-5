@@ -6,10 +6,12 @@ namespace FirstMVC5.Models
 {
     public class Aluno
     {
+        [Key]
         public int Id { get; set; }
 
         [DisplayName("Nome Completo")]
         [Required(ErrorMessage = "O campo {0} é requerido!")]
+        [MaxLength(100, ErrorMessage ="No máximo 100 caracteres")]
         public string Nome { get; set; }
 
         [DisplayName("E-mail")]

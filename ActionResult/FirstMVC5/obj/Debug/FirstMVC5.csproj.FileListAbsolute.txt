@@ -168,3 +168,7 @@ C:\dev\VisualStudio\ASPNET\aspnet-mvc-5\ActionResult\FirstMVC5\obj\Debug\FirstMV
 C:\dev\VisualStudio\ASPNET\aspnet-mvc-5\ActionResult\FirstMVC5\obj\Debug\FirstMVC5.csproj.CoreCompileInputs.cache
 C:\dev\VisualStudio\ASPNET\aspnet-mvc-5\ActionResult\FirstMVC5\obj\Debug\FirstMVC5.dll
 C:\dev\VisualStudio\ASPNET\aspnet-mvc-5\ActionResult\FirstMVC5\obj\Debug\FirstMVC5.pdb
+C:\dev\VisualStudio\ASPNET\aspnet-mvc-5\ActionResult\FirstMVC5\bin\EntityFramework.dll
+C:\dev\VisualStudio\ASPNET\aspnet-mvc-5\ActionResult\FirstMVC5\bin\EntityFramework.SqlServer.dll
+C:\dev\VisualStudio\ASPNET\aspnet-mvc-5\ActionResult\FirstMVC5\bin\EntityFramework.xml
+C:\dev\VisualStudio\ASPNET\aspnet-mvc-5\ActionResult\FirstMVC5\bin\EntityFramework.SqlServer.xml
