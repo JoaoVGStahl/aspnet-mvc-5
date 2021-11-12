@@ -120,6 +120,5 @@ C:\dev\VisualStudio\ASPNET\aspnet-mvc-5\App\MyApp\AppMvc\bin\pt-br\Microsoft.Owi
 C:\dev\VisualStudio\ASPNET\aspnet-mvc-5\App\MyApp\AppMvc\bin\pt-br\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
 C:\dev\VisualStudio\ASPNET\aspnet-mvc-5\App\MyApp\AppMvc\obj\Debug\AppMvc.csproj.AssemblyReference.cache
 C:\dev\VisualStudio\ASPNET\aspnet-mvc-5\App\MyApp\AppMvc\obj\Debug\AppMvc.csproj.CoreCompileInputs.cache
-C:\dev\VisualStudio\ASPNET\aspnet-mvc-5\App\MyApp\AppMvc\obj\Debug\AppMvc.csproj.CopyComplete
 C:\dev\VisualStudio\ASPNET\aspnet-mvc-5\App\MyApp\AppMvc\obj\Debug\AppMvc.dll
 C:\dev\VisualStudio\ASPNET\aspnet-mvc-5\App\MyApp\AppMvc\obj\Debug\AppMvc.pdb
