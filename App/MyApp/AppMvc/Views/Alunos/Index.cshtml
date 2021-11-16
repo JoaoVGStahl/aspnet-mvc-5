@@ -4,6 +4,17 @@
     ViewBag.Title = "Gestão de Alunos";
 }
 
+@if (TempData["Mensagem"] != null)
+{
+    <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert">x</button>
+        <h3>@TempData["Mensagem"].ToString()</h3>
+    </div>
+}
+
+
+
+
 <h2>Gestão de Alunos</h2>
 <div>
     <a href="@Url.Action("Create")" class="btn btn-primary">Novo aluno</a><br /><br />
@@ -26,25 +37,26 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CPF)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ativo)
-        </td>
-        <td>
-            <a href="@Url.Action("Edit","Alunos", new { id=item.Id })" class="btn btn-warning">Editar</a>
-            <a href="@Url.Action("Details","Alunos", new { id=item.Id })" class="btn btn-info">Detalhes</a>
-            <a href="@Url.Action("Delete","Alunos", new { id=item.Id })" class="btn btn-danger">Excluir</a>
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CPF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ativo)
+            </td>
+            <td>
+                <a href="@Url.Action("Edit","Alunos", new { id=item.Id })" class="btn btn-warning">Editar</a>
+                <a href="@Url.Action("Details","Alunos", new { id=item.Id })" class="btn btn-info">Detalhes</a>
+                <a href="@Url.Action("Delete","Alunos", new { id=item.Id })" class="btn btn-danger">Excluir</a>
+            </td>
+        </tr>
+    }
 </table>

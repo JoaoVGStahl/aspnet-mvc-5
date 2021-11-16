@@ -7,12 +7,15 @@ using AppMvc.Models;
 
 namespace AppMvc.Controllers
 {
+    [Authorize] // Bloqueia Usuario não logados de acessar todos os metodos
     public class AlunosController : Controller
     {
         private readonly ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Alunos
         [HttpGet]
+        [AllowAnonymous] // abre um execeção e permite que usuários não logados acessem este metodo
+        [OutputCache(Duration = 60)] // Não recomendado para dados dinamicos
         [Route("alunos")]
         public async Task<ActionResult> Index()
         {
@@ -43,7 +46,9 @@ namespace AppMvc.Controllers
 
         [HttpPost]
         [Route("novo-aluno")]
-        [ValidateAntiForgeryToken]
+        [HandleError(ExceptionType = typeof(NullReferenceException), View = "Erro")] // Retorn um erro especifico
+        [ValidateInput(false)] //Para dados perigosos, por exemplo, códigos de JavaScript
+        [ValidateAntiForgeryToken] // Gera um token em que é necessário validar para o usuário acesse a pagina ou faça a requeisição
         public async Task<ActionResult> Create([Bind(Include = "Id,Nome,Email,CPF,DataMatricula,Ativo")] Aluno aluno)
         {
             if (ModelState.IsValid)
@@ -51,6 +56,10 @@ namespace AppMvc.Controllers
                 aluno.DataMatricula = DateTime.Now;
                 db.Alunos.Add(aluno);
                 await db.SaveChangesAsync();
+
+
+                TempData["Mensagem"] = "Aluno Cadastrado com sucesso!";
+
                 return RedirectToAction("Index");
             }
 
@@ -60,6 +69,7 @@ namespace AppMvc.Controllers
         // GET: Alunos/Edit/5
         [HttpGet]
         [Route("editar-aluno/{id:int}")]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit(int id)
         {
             var aluno = await db.Alunos.FindAsync(id);
@@ -67,12 +77,11 @@ namespace AppMvc.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Mensagem = "Não que esqueça que esta ação é irreversível!";
             return View(aluno);
         }
 
         // POST: Alunos/Edit/5
-        // Para se proteger de mais ataques, habilite as propriedades específicas às quais você quer se associar. Para 
-        // obter mais detalhes, veja https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [Route("editar-aluno/{id:int}")]
         [ValidateAntiForgeryToken]
@@ -91,6 +100,7 @@ namespace AppMvc.Controllers
         // GET: Alunos/Delete/5
         [HttpGet]
         [Route("excluir-aluno/{id:int}")]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> Delete(int id)
         {
             var aluno = await db.Alunos.FindAsync(id);
